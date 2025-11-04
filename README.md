@@ -4,7 +4,7 @@ A React-based tool for transforming plain text and Word content into beautifully
 
 ## About
 
-Bugs and all, I'm adding this to GitHub in case other people can take it and improve upon it. I've had this idea for years that I'd like to build some sort of speed-boosting app for formatting learning material for Moodle, but I've never had the time or brain power. Finally, with LLMs becoming popular, I was able to rapidly generate an app and then perform several iterations to smooth things out. I realise this is not a perfect app, but it doesn't have to be at this point. The aim is really just to help a learning designer paste in ready-to-go content from Word Docs and apply some interactive formatting as quick as possible. The styling is based on my institution's branding, but the app could be customised to parameterise much of this. Cheers, Rolley
+Bugs and all, I'm adding this to GitHub in case other people can take it and improve upon it. I've had this idea for years that I'd like to build some sort of speed-boosting app for formatting learning material for Moodle, but I've never had the time or brain power. Finally, with LLMs becoming popular, I was able to rapidly generate an app and then perform several iterations to smooth things out. I realise this is not a perfect app, but it doesn't have to be at this point. The aim is really just to help a learning designer paste in ready-to-go content from Word Docs (as they chunk it) and apply some interactive formatting as quick as possible (then creating LMS artefacts like Moodle Book). The styling is based on my institution's branding, but the app could be customised to parameterise much of this. Cheers, Rolley
 
 ![Content Designer Interface](screenshot.png)
 *Transform educational content with intelligent formatting suggestions*
@@ -25,12 +25,12 @@ Bugs and all, I'm adding this to GitHub in case other people can take it and imp
 - **Text Columns**: Magazine-style accessible column layouts
 
 ### ✨ Interactive Features
-- Real-time live preview with Bootstrap and Font Awesome integration
-- Paste directly from Microsoft Word with preserved formatting
-- Customisable split points for multi-section components
-- List indentation control with visual preview
+- Real-time live preview with Bootstrap and Font Awesome integration (compatible with Moodle v4 I think)
+- Paste directly from Microsoft Word with some preserved formatting (cleans up html)
+- Customisable split points for multi-section components (somewhat buggy)
+- List indentation control with visual preview (lists have some bugs)
 - Icon and colour customisation for icon lists
-- One-click HTML export
+- One-click HTML copy-to-clipboard
 
 ### 📊 Content Analysis
 - Reading time estimation
@@ -41,7 +41,7 @@ Bugs and all, I'm adding this to GitHub in case other people can take it and imp
 ## Getting Started
 
 ### Prerequisites
-- Node.js (v16 or higher)
+- Node.js (v20 or higher)
 - npm or yarn
 
 ### Installation
@@ -68,14 +68,15 @@ npm run dev
 
 ### Basic Workflow
 
-1. **Input Content**: Paste your content from Word or type directly into the input area
-   - Formatting (bold, italic, underline) is preserved
-   - Lists and headings are automatically detected
+1. **Input Content**: Paste your content from Word into the input area
+   - Only small changes can be made in the input area
+   - Formatting (bold, italic, underline, hyperlinks) is preserved
 
 2. **Select Blocks**: Click on a block or drag to select multiple blocks
 
 3. **Apply Components**: Choose from the design components panel
    - Suggested components appear with a "Suggested" badge
+   - Some components appear different if a heading is detected
    - Preview updates in real-time
 
 4. **Customise**: 
@@ -185,18 +186,9 @@ The project follows standard React conventions:
 ## Known Limitations
 
 - Content editor requires modern browser with full contentEditable support
-- Very large documents (>10,000 words) may experience performance issues
+- Very large documents (>10,000 words) may experience performance issues, chunk your content as you go and work on it bit by bit
 - List detection from plain text is heuristic-based and may need manual adjustment
-
-## Future Enhancements
-
-- [ ] TypeScript migration for better type safety
-- [ ] Undo/redo functionality
-- [ ] Save/load projects to browser storage
-- [ ] Export to other formats (PDF, Markdown)
-- [ ] Custom component templates
-- [ ] Collaborative editing
-- [ ] Accessibility checker
+- Overall, there are a number of bugs, or little wrinkles that have work-arounds
 
 ## Contributing
 
@@ -210,7 +202,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
 
 ## Acknowledgements
 
@@ -221,7 +213,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Support
 
-For issues, questions, or suggestions, please open an issue on GitHub.
+For issues, questions, or suggestions, please open an issue on GitHub - but be mindful that I know of a lot of bugs already :) 
 
 ---
 
